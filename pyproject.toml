@@ -5,7 +5,10 @@ description = "Command line interface for testing internet bandwidth using speed
 readme = "README.md"
 requires-python = ">=3.10"
 license = "Apache-2.0"
-dependencies = []
+dependencies = [
+    "typer>=0.15.0",
+    "rich>=13.0.0",
+]
 
 [project.scripts]
 speedtest-cli = "speedtest_cli.cli:main"

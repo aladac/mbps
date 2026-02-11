@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv init:*)",
+      "Bash(~/.local/bin/uv:*)",
+      "Bash(~/.cargo/bin/uv:*)",
+      "Bash(curl:*)",
+      "Bash(sh:*)",
+      "Bash(export PATH=\"$HOME/.local/bin:$PATH\")",
+      "Bash(uv run python:*)",
+      "Bash(uv run speedtest-cli:*)",
+      "Bash(uv run:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(uv lock:*)",
+      "Bash(uv sync:*)"
+    ]
+  }
+}

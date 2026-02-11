@@ -15,11 +15,16 @@
 
 import math
 import platform
-import sys
+
+from rich.console import Console
+from rich.progress import Progress, BarColumn, TextColumn
 
 from speedtest_cli import __version__
 
 DEBUG = False
+
+console = Console(highlight=False)
+err_console = Console(stderr=True, highlight=False)
 
 
 class FakeShutdownEvent:
@@ -80,25 +85,47 @@ def printer(string, quiet=False, debug=False, error=False, **kwargs):
     if debug and not DEBUG:
         return
 
-    if debug:
-        if sys.stdout.isatty():
-            out = '\033[1;30mDEBUG: %s\033[0m' % string
-        else:
-            out = 'DEBUG: %s' % string
-    else:
-        out = string
-
-    if error:
-        kwargs['file'] = sys.stderr
-
     if not quiet:
-        print(out, **kwargs)
+        if debug:
+            err_console.print(f"[dim]DEBUG: {string}[/dim]", **kwargs)
+        elif error:
+            err_console.print(string, **kwargs)
+        else:
+            print(string, **kwargs)
+
+
+def make_rich_callback(shutdown_event, label=""):
+    """Create a rich Progress bar and callback for download/upload progress.
+
+    Returns (progress, callback) tuple. Caller must use progress as a
+    context manager.
+    """
+    progress = Progress(
+        TextColumn("[bold blue]{task.description}"),
+        BarColumn(),
+        TextColumn("[progress.percentage]{task.percentage:>3.0f}%"),
+        transient=True,
+        console=console,
+    )
+    task_id = progress.add_task(label, total=None)
+
+    def callback(current, total, start=False, end=False):
+        if event_is_set(shutdown_event):
+            return
+        if start and progress.tasks[task_id].total is None:
+            progress.update(task_id, total=total)
+        if end:
+            progress.advance(task_id)
+
+    return progress, callback
 
 
 def print_dots(shutdown_event):
     """Built in callback function used by Thread classes for printing
-    status
+    status — kept for backwards compatibility.
     """
+    import sys
+
     def inner(current, total, start=False, end=False):
         if event_is_set(shutdown_event):
             return
