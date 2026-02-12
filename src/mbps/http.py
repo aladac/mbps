@@ -25,9 +25,9 @@ from urllib.request import (
     HTTPErrorProcessor, OpenerDirector,
 )
 
-from speedtest_cli.compat import GZIP_BASE, HTTP_ERRORS, ssl
-from speedtest_cli.exceptions import SpeedtestHTTPError
-from speedtest_cli.utils import build_user_agent, printer
+from mbps.compat import GZIP_BASE, HTTP_ERRORS, ssl
+from mbps.exceptions import SpeedtestHTTPError
+from mbps.utils import build_user_agent, printer
 
 _GLOBAL_DEFAULT_TIMEOUT = object()
 

@@ -22,10 +22,10 @@ import typer
 from http.client import HTTPSConnection
 from rich.table import Table
 
-from speedtest_cli import __version__
-from speedtest_cli.compat import HTTP_ERRORS
-from speedtest_cli.core import Speedtest
-from speedtest_cli.exceptions import (
+from mbps import __version__
+from mbps.compat import HTTP_ERRORS
+from mbps.core import Speedtest
+from mbps.exceptions import (
     ConfigRetrievalError,
     InvalidServerIDType,
     NoMatchedServers,
@@ -33,8 +33,8 @@ from speedtest_cli.exceptions import (
     SpeedtestCLIError,
     SpeedtestException,
 )
-from speedtest_cli.results import SpeedtestResults
-from speedtest_cli.utils import (
+from mbps.results import SpeedtestResults
+from mbps.utils import (
     DEBUG,
     console,
     do_nothing,
@@ -42,12 +42,12 @@ from speedtest_cli.utils import (
     make_rich_callback,
     printer,
 )
-import speedtest_cli.utils as _utils
+import mbps.utils as _utils
 
 
 def version_callback(value: bool):
     if value:
-        print(f"speedtest-cli {__version__}")
+        print(f"mbps {__version__}")
         print(f"Python {sys.version.replace(chr(10), '')}")
         raise typer.Exit()
 

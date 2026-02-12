@@ -19,10 +19,10 @@ from io import BytesIO
 
 from urllib.request import urlopen
 
-from speedtest_cli.compat import HTTP_ERRORS
-from speedtest_cli.exceptions import SpeedtestCLIError, SpeedtestUploadTimeout
-from speedtest_cli.http import build_request
-from speedtest_cli.utils import FakeShutdownEvent, event_is_set
+from mbps.compat import HTTP_ERRORS
+from mbps.exceptions import SpeedtestCLIError, SpeedtestUploadTimeout
+from mbps.http import build_request
+from mbps.utils import FakeShutdownEvent, event_is_set
 
 
 class HTTPUploaderData:

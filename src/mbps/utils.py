@@ -19,7 +19,7 @@ import platform
 from rich.console import Console
 from rich.progress import Progress, BarColumn, TextColumn
 
-from speedtest_cli import __version__
+from mbps import __version__
 
 DEBUG = False
 
@@ -72,7 +72,7 @@ def build_user_agent():
                                 platform.architecture()[0]),
         'Python/%s' % platform.python_version(),
         '(KHTML, like Gecko)',
-        'speedtest-cli/%s' % __version__
+        'mbps/%s' % __version__
     )
     user_agent = ' '.join(ua_tuple)
     printer('User-Agent: %s' % user_agent, debug=True)

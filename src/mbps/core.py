@@ -23,9 +23,9 @@ import xml.parsers.expat
 from queue import Queue
 from urllib.parse import urlparse
 
-from speedtest_cli.compat import HTTP_ERRORS
-from speedtest_cli.downloader import HTTPDownloader
-from speedtest_cli.exceptions import (
+from mbps.compat import HTTP_ERRORS
+from mbps.downloader import HTTPDownloader
+from mbps.exceptions import (
     ConfigRetrievalError,
     InvalidServerIDType,
     InvalidSpeedtestMiniServer,
@@ -36,7 +36,7 @@ from speedtest_cli.exceptions import (
     SpeedtestMiniConnectFailure,
     SpeedtestServersError,
 )
-from speedtest_cli.http import (
+from mbps.http import (
     SpeedtestHTTPConnection,
     SpeedtestHTTPSConnection,
     build_opener,
@@ -44,9 +44,9 @@ from speedtest_cli.http import (
     catch_request,
     get_response_stream,
 )
-from speedtest_cli.results import SpeedtestResults
-from speedtest_cli.uploader import HTTPUploader, HTTPUploaderData
-from speedtest_cli.utils import (
+from mbps.results import SpeedtestResults
+from mbps.uploader import HTTPUploader, HTTPUploaderData
+from mbps.utils import (
     FakeShutdownEvent,
     build_user_agent,
     distance,

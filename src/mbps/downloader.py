@@ -18,8 +18,8 @@ import timeit
 
 from urllib.request import urlopen
 
-from speedtest_cli.compat import HTTP_ERRORS
-from speedtest_cli.utils import FakeShutdownEvent, event_is_set
+from mbps.compat import HTTP_ERRORS
+from mbps.utils import FakeShutdownEvent, event_is_set
 
 
 class HTTPDownloader(threading.Thread):

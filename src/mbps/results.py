@@ -20,11 +20,11 @@ from hashlib import md5
 from io import StringIO
 from urllib.parse import parse_qs
 
-from speedtest_cli.exceptions import (
+from mbps.exceptions import (
     ShareResultsConnectFailure,
     ShareResultsSubmitFailure,
 )
-from speedtest_cli.http import build_opener, build_request, catch_request
+from mbps.http import build_opener, build_request, catch_request
 
 
 class SpeedtestResults:

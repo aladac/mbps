@@ -21,10 +21,10 @@ __version__ = '2.1.4b1'
 
 def __getattr__(name):
     if name == 'Speedtest':
-        from speedtest_cli.core import Speedtest
+        from mbps.core import Speedtest
         return Speedtest
     if name == 'SpeedtestResults':
-        from speedtest_cli.results import SpeedtestResults
+        from mbps.results import SpeedtestResults
         return SpeedtestResults
 
     _exceptions = {
@@ -46,10 +46,10 @@ def __getattr__(name):
         'SpeedtestMissingBestServer',
     }
     if name in _exceptions:
-        from speedtest_cli import exceptions
+        from mbps import exceptions
         return getattr(exceptions, name)
 
-    raise AttributeError(f"module 'speedtest_cli' has no attribute {name!r}")
+    raise AttributeError(f"module 'mbps' has no attribute {name!r}")
 
 
 __all__ = [
