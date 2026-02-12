@@ -13,7 +13,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 # Lazy imports to avoid circular dependency issues at module load time.
 # The public API is available via __all__ and will be resolved on attribute access.
