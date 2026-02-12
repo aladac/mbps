@@ -13,7 +13,13 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(uv lock:*)",
-      "Bash(uv sync:*)"
+      "Bash(uv sync:*)",
+      "Bash(gh repo list:*)",
+      "Bash(pip index:*)",
+      "Bash(for pkg in whoosh blitz flux jolt streak rush warp mach knot wire nex spx netx dash spark turbo sonic zipline)",
+      "Bash(do echo -n \"$pkg: \")",
+      "Bash(done)",
+      "Bash(for pkg in torque flare thrust nitro gust sling fling volts raze swoosh whip amp ohm hertz baud mbps plex vroom zoom)"
     ]
   }
 }
