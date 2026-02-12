@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="mbps.png" alt="mbps">
+  <img width="400" height="120" alt="image" src="https://github.com/user-attachments/assets/054891bf-7cb0-45b6-9efe-b4935ed99687" />
 </p>
 
 Command line interface for testing internet bandwidth using speedtest.net.
