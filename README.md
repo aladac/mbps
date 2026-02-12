@@ -1,4 +1,6 @@
-# mbps
+<p align="center">
+  <img src="mbps.png" alt="mbps">
+</p>
 
 Command line interface for testing internet bandwidth using speedtest.net.
 
