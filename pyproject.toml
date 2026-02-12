@@ -1,6 +1,6 @@
 [project]
 name = "mbps"
-version = "2.1.4b1"
+version = "0.1.0"
 description = "Command line interface for testing internet bandwidth using speedtest.net"
 readme = "README.md"
 requires-python = ">=3.10"
